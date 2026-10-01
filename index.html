@@ -7,7 +7,7 @@
   <title>HMA Alumni Association | Winning Life Through Education</title>
 
   <meta name="description"
-        content="Connect with HMA alumni and discover success stories, motivational profiles, community engagements and school initiatives.">
+        content="Connect with HMA graduates, explore alumni by year and discover inspiring stories and community activities.">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -22,14 +22,13 @@
     .quote-card {
       margin: 0;
       padding: 28px;
-      background: #FFFFFF;
+      background: white;
       border: 1px solid #DDE5EC;
       border-top: 4px solid #9B4D23;
       border-radius: 8px;
     }
 
     .quote-photo {
-      display: block;
       width: 110px;
       height: 110px;
       object-fit: cover;
@@ -43,7 +42,6 @@
       font-size: 18px;
       line-height: 1.8;
       font-style: italic;
-      color: #232323;
     }
 
     .quote-card figcaption {
@@ -59,6 +57,12 @@
       color: #586577;
     }
 
+    .year-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
     @media (max-width: 700px) {
       .quotes-grid {
         grid-template-columns: 1fr;
@@ -68,18 +72,12 @@
 </head>
 
 <body>
-
-  <!-- HEADER -->
   <header>
     <div class="container header-inner">
-
       <a href="index.html" class="brand">
-        <img
-          src="HMA_logo_color.webp"
-          alt="Haile-Manas Academy logo"
-          width="1500"
-          height="595"
-        >
+        <img src="HMA_logo_color.webp"
+             alt="Haile-Manas Academy logo"
+             width="1500" height="595">
 
         <div>
           <strong>HMA Alumni Association</strong>
@@ -91,22 +89,18 @@
         <a href="index.html" aria-current="page">Home</a>
         <a href="about.html">About</a>
         <a href="purpose.html">Our Purpose</a>
+        <a href="alumni.html">Alumni</a>
         <a href="#monthly-highlights">Monthly Highlights</a>
         <a href="#updates">Updates</a>
         <a href="#join">Join Us</a>
       </nav>
-
     </div>
   </header>
 
   <main>
-
-    <!-- WELCOME -->
     <section id="home" class="hero">
       <div class="container">
-
         <div class="eyebrow">Welcome to HMA Alumni</div>
-
         <h1>Where Dreams Turn to Reality</h1>
 
         <p>
@@ -114,28 +108,21 @@
           we stay connected and inspire the next generation.
         </p>
 
-        <p class="tagline">
-          Winning Life Through Education
-        </p>
+        <p class="tagline">Winning Life Through Education</p>
 
-        <a href="#join" class="button">
-          Join the Alumni Network
-        </a>
-
+        <a href="#join" class="button">Join the Alumni Network</a>
       </div>
     </section>
 
-    <!-- ABOUT -->
     <section id="about">
       <div class="container intro">
-
         <h2>A Lifelong Connection</h2>
 
         <p>
           The HMA Alumni Association connects former students,
           faculty and administration. It is a place to reconnect
-          with classmates, share experiences and support the
-          HMA community.
+          with classmates, share experiences and support
+          the HMA community.
         </p>
 
         <p>
@@ -144,72 +131,91 @@
           to give back.
         </p>
 
-        <a href="about.html" class="button">
-          Learn More About Us
-        </a>
-
+        <a href="about.html" class="button">Learn More About Us</a>
       </div>
     </section>
 
-    <!-- PURPOSE -->
     <section id="purpose" class="light">
       <div class="container">
-
         <h2>Our Purpose</h2>
 
         <div class="cards">
-
           <article class="card">
             <h3>Stay Connected</h3>
             <p>
-              Keep in touch with classmates, exchange information
-              and build personal and professional connections.
+              Exchange information and build personal
+              and professional connections.
             </p>
           </article>
 
           <article class="card">
             <h3>Support HMA</h3>
             <p>
-              Contribute to school development and help future
-              generations of students achieve their dreams.
+              Contribute to school development and help
+              future generations achieve their dreams.
             </p>
           </article>
 
           <article class="card">
             <h3>Inspire &amp; Create Opportunities</h3>
             <p>
-              Mentor students, share career guidance and connect
-              alumni with internship and job opportunities.
+              Mentor students and connect alumni with
+              internship and job opportunities.
             </p>
           </article>
-
         </div>
 
         <a href="purpose.html" class="button">
           Explore Our Objectives
         </a>
-
       </div>
     </section>
 
-    <!-- QUOTES -->
-    <section id="voices">
+    <!-- ALUMNI BY YEAR -->
+    <section id="alumni">
       <div class="container">
+        <h2>Bridge Between HMA and Its Graduates</h2>
 
+        <p>
+          Explore our alumni by graduation year, discover
+          where their journeys began and see where
+          education has taken them.
+        </p>
+
+        <div class="year-links">
+          <a href="alumni.html?year=2024" class="button">
+            Class of 2024
+          </a>
+          <a href="alumni.html?year=2025" class="button">
+            Class of 2025
+          </a>
+          <a href="alumni.html?year=2026" class="button">
+            Class of 2026
+          </a>
+          <a href="alumni.html?year=2027" class="button">
+            Class of 2027 — Upcoming
+          </a>
+        </div>
+
+        <p>
+          <a href="alumni.html">
+            View all alumni and explore the maps
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <section id="voices" class="light">
+      <div class="container">
         <h2>Voices of Inspiration</h2>
 
         <div class="quotes-grid">
-
-          <!-- REBECCA HAILE -->
           <figure class="quote-card">
-            <img
-              src="rebecca-haile.png"
-              alt="Rebecca Haile"
-              class="quote-photo"
-              width="110"
-              height="110"
-              loading="lazy"
-            >
+            <img src="rebecca-haile.png"
+                 alt="Rebecca Haile"
+                 class="quote-photo"
+                 width="110" height="110"
+                 loading="lazy">
 
             <blockquote>
               “I am deeply grateful for my family. I’ve had so
@@ -222,19 +228,13 @@
             <figcaption>Rebecca Haile</figcaption>
           </figure>
 
-          <!-- JEAN MANAS -->
           <figure class="quote-card">
-            <img
-              src="jean-manas.png"
-              alt="Jean Manas"
-              class="quote-photo"
-              width="110"
-              height="110"
-              loading="lazy"
-            >
+            <img src="jean-manas.png"
+                 alt="Jean Manas"
+                 class="quote-photo"
+                 width="110" height="110"
+                 loading="lazy">
 
-            <!-- Temporary copy of Rebecca Haile's quote.
-                 Replace with Jean Manas's quote when available. -->
             <blockquote>
               “I am deeply grateful for my family. I’ve had so
               many champions and cheerleaders and just wonderful
@@ -250,16 +250,12 @@
               </span>
             </figcaption>
           </figure>
-
         </div>
-
       </div>
     </section>
 
-    <!-- MONTHLY HIGHLIGHTS -->
-    <section id="monthly-highlights" class="light">
+    <section id="monthly-highlights">
       <div class="container">
-
         <h2>Monthly Highlights</h2>
 
         <p>
@@ -268,17 +264,14 @@
           initiatives conducted by HMA.
         </p>
 
-        <!-- Update the month and cards each month. -->
         <p><strong>October 2026</strong></p>
 
         <div class="updates">
-
           <article class="card">
             <h3>Success Stories</h3>
             <p>
-              Coming soon: stories celebrating the educational,
-              professional and entrepreneurial achievements
-              of HMA alumni.
+              Coming soon: educational, professional and
+              entrepreneurial achievements of HMA alumni.
             </p>
           </article>
 
@@ -286,42 +279,34 @@
             <h3>Motivational Profiles</h3>
             <p>
               Coming soon: inspiring journeys, lessons learned
-              and advice from graduates to encourage students
-              and fellow alumni.
+              and advice from graduates.
             </p>
           </article>
 
           <article class="card">
             <h3>Social Engagements</h3>
             <p>
-              Coming soon: highlights of community service,
-              volunteering and social activities involving
-              HMA and its alumni.
+              Coming soon: community service, volunteering
+              and social activities involving HMA and its alumni.
             </p>
           </article>
 
           <article class="card">
             <h3>Corporate Social Responsibility</h3>
             <p>
-              Coming soon: initiatives conducted by HMA
-              to support communities and contribute
-              to positive social change.
+              Coming soon: HMA initiatives supporting
+              communities and positive social change.
             </p>
           </article>
-
         </div>
-
       </div>
     </section>
 
-    <!-- NEWS AND EVENTS -->
-    <section id="updates">
+    <section id="updates" class="light">
       <div class="container">
-
         <h2>News &amp; Events</h2>
 
         <div class="updates">
-
           <article class="update">
             <h3>Alumni News</h3>
             <p>
@@ -333,43 +318,35 @@
           <article class="update">
             <h3>Upcoming Events</h3>
             <p>
-              Details of reunions, networking activities
-              and school support initiatives will be posted here.
+              Reunions, networking activities and school
+              support initiatives will be posted here.
             </p>
           </article>
-
         </div>
-
       </div>
     </section>
 
-    <!-- JOIN -->
     <section id="join" class="join">
       <div class="container">
-
         <h2>Be Part of the HMA Community</h2>
 
         <p>
-          Reconnect with your classmates, share your journey
+          Reconnect with classmates, share your journey
           and help future generations achieve their dreams.
         </p>
 
-        <p>
-          Alumni registration and contact details will be added soon.
-        </p>
-
+        <a href="alumni.html#profile-update" class="button">
+          Register or Update Your Profile
+        </a>
       </div>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; 2026 HMA Alumni Association.</p>
       <p>Winning Life Through Education</p>
     </div>
   </footer>
-
 </body>
 </html>
