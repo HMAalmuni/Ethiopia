@@ -247,6 +247,7 @@
     <section class="hero">
       <div class="container">
         <div class="eyebrow">Our Alumni Community</div>
+
         <h1>Bridge Between HMA and Its Graduates</h1>
 
         <p>
@@ -255,6 +256,13 @@
         </p>
 
         <p class="tagline">Winning Life Through Education</p>
+
+        <a href="https://forms.gle/yBbwkwR4KGqmgoSZ6"
+           class="button"
+           target="_blank"
+           rel="noopener noreferrer">
+          Register My Profile
+        </a>
       </div>
     </section>
 
@@ -360,13 +368,23 @@
         <h2>Register or Update Your Profile</h2>
 
         <p>
-          Contact the association to register or request
-          changes to your profile.
+          Complete our alumni form to submit your profile.
+          Profiles appear in the directory after approval
+          and consent to publication.
         </p>
 
-        <a id="profile-form" class="button" hidden>
+        <a href="https://forms.gle/yBbwkwR4KGqmgoSZ6"
+           class="button"
+           target="_blank"
+           rel="noopener noreferrer">
           Register or Update My Profile
         </a>
+
+        <p>
+          If you have already submitted a response, use your
+          individual response-edit link to update it, if available.
+          Otherwise, contact the association for help with changes.
+        </p>
 
         <a href="join.html" class="button">
           Contact the Association
@@ -393,7 +411,6 @@
     const DIRECTORY_URL =
       "https://script.google.com/macros/s/AKfycbyPOm0aU1rEoSqVji6UWrar140tjI34KUyY407RzK1MzMrLloLdbKH2xAK2e4h6U2rf/exec";
 
-    const PROFILE_FORM_URL = "";
     const YEARS = [2024, 2025, 2026, 2027];
 
     let alumni = [];
@@ -522,7 +539,6 @@
       fallback.setAttribute("aria-hidden", "true");
       card.appendChild(fallback);
 
-      // Photos must be public image URLs or repository image paths.
       const photoUrl = text(person.photoUrl);
 
       if (photoUrl) {
@@ -553,7 +569,7 @@
             image.src = url.href;
           }
         } catch (error) {
-          // Keep initials if the image URL is invalid.
+          // Keep initials if the photo URL is invalid.
         }
       }
 
@@ -850,12 +866,6 @@
       };
 
       document.body.appendChild(script);
-    }
-
-    if (PROFILE_FORM_URL) {
-      const link = document.getElementById("profile-form");
-      link.href = PROFILE_FORM_URL;
-      link.hidden = false;
     }
 
     yearSelect.addEventListener("change", renderDirectory);
