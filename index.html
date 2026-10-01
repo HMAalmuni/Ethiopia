@@ -10,6 +10,59 @@
         content="Connect with HMA alumni and discover success stories, motivational profiles, community engagements and school initiatives.">
 
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Styles for the quotes section */
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 25px;
+    }
+
+    .quote-card {
+      margin: 0;
+      padding: 28px;
+      background: #FFFFFF;
+      border: 1px solid #DDE5EC;
+      border-top: 4px solid #9B4D23;
+      border-radius: 8px;
+    }
+
+    .quote-photo {
+      display: block;
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    .quote-card blockquote {
+      margin: 0 0 20px;
+      font-size: 18px;
+      line-height: 1.8;
+      font-style: italic;
+      color: #232323;
+    }
+
+    .quote-card figcaption {
+      color: #0A5E9A;
+      font-weight: bold;
+    }
+
+    .quote-pending {
+      color: #586577;
+      margin: 0 0 20px;
+    }
+
+    @media (max-width: 700px) {
+      .quotes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -137,8 +190,52 @@
       </div>
     </section>
 
+    <!-- QUOTES -->
+    <section id="voices">
+      <div class="container">
+
+        <h2>Voices of Inspiration</h2>
+
+        <div class="quotes-grid">
+
+          <figure class="quote-card">
+            <img
+              src="rebecca-haile.png"
+              alt="Rebecca Haile"
+              class="quote-photo"
+              width="110"
+              height="110"
+              loading="lazy"
+            >
+
+            <blockquote>
+              “I am deeply grateful for my family. I’ve had so
+              many champions and cheerleaders and just wonderful
+              people around me my whole life. And I am extremely
+              grateful for the education I was lucky to receive.
+              That made all the difference in the world.”
+            </blockquote>
+
+            <figcaption>Rebecca Haile</figcaption>
+          </figure>
+
+          <figure class="quote-card">
+            <!-- Add the confirmed photograph and quote here. -->
+
+            <p class="quote-pending">
+              Quote to be added.
+            </p>
+
+            <figcaption>Professor Getachew Haile</figcaption>
+          </figure>
+
+        </div>
+
+      </div>
+    </section>
+
     <!-- MONTHLY HIGHLIGHTS -->
-    <section id="monthly-highlights">
+    <section id="monthly-highlights" class="light">
       <div class="container">
 
         <h2>Monthly Highlights</h2>
@@ -149,15 +246,13 @@
           initiatives conducted by HMA.
         </p>
 
-        <!-- Update the month and the four cards each month. -->
+        <!-- Update the month and cards each month. -->
         <p><strong>October 2026</strong></p>
 
         <div class="updates">
 
           <article class="card">
             <h3>Success Stories</h3>
-
-            <!-- Replace with an approved alumni story. -->
             <p>
               Coming soon: stories celebrating the educational,
               professional and entrepreneurial achievements
@@ -167,8 +262,6 @@
 
           <article class="card">
             <h3>Motivational Profiles</h3>
-
-            <!-- Replace with an approved profile. -->
             <p>
               Coming soon: inspiring journeys, lessons learned
               and advice from graduates to encourage students
@@ -178,8 +271,6 @@
 
           <article class="card">
             <h3>Social Engagements</h3>
-
-            <!-- Replace with details of an actual activity. -->
             <p>
               Coming soon: highlights of community service,
               volunteering and social activities involving
@@ -189,8 +280,6 @@
 
           <article class="card">
             <h3>Corporate Social Responsibility</h3>
-
-            <!-- Replace with details of an actual HMA initiative. -->
             <p>
               Coming soon: initiatives conducted by HMA
               to support communities and contribute
@@ -204,7 +293,7 @@
     </section>
 
     <!-- NEWS AND EVENTS -->
-    <section id="updates" class="light">
+    <section id="updates">
       <div class="container">
 
         <h2>News &amp; Events</h2>
@@ -243,8 +332,6 @@
           and help future generations achieve their dreams.
         </p>
 
-        <!-- Add your registration link or official contact
-             details here when available. -->
         <p>
           Alumni registration and contact details will be added soon.
         </p>
