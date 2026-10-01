@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* Styles for the quotes section */
     .quotes-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -52,9 +51,12 @@
       font-weight: bold;
     }
 
-    .quote-pending {
+    .placeholder-label {
+      display: block;
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: normal;
       color: #586577;
-      margin: 0 0 20px;
     }
 
     @media (max-width: 700px) {
@@ -198,6 +200,7 @@
 
         <div class="quotes-grid">
 
+          <!-- REBECCA HAILE -->
           <figure class="quote-card">
             <img
               src="rebecca-haile.png"
@@ -219,14 +222,33 @@
             <figcaption>Rebecca Haile</figcaption>
           </figure>
 
+          <!-- JEAN MANAS -->
           <figure class="quote-card">
-            <!-- Add the confirmed photograph and quote here. -->
+            <img
+              src="jean-manas.png"
+              alt="Jean Manas"
+              class="quote-photo"
+              width="110"
+              height="110"
+              loading="lazy"
+            >
 
-            <p class="quote-pending">
-              Quote to be added.
-            </p>
+            <!-- Temporary copy of Rebecca Haile's quote.
+                 Replace with Jean Manas's quote when available. -->
+            <blockquote>
+              “I am deeply grateful for my family. I’ve had so
+              many champions and cheerleaders and just wonderful
+              people around me my whole life. And I am extremely
+              grateful for the education I was lucky to receive.
+              That made all the difference in the world.”
+            </blockquote>
 
-            <figcaption>Professor Getachew Haile</figcaption>
+            <figcaption>
+              Jean Manas
+              <span class="placeholder-label">
+                Temporary placeholder — quote by Rebecca Haile.
+              </span>
+            </figcaption>
           </figure>
 
         </div>
