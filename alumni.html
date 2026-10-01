@@ -7,10 +7,9 @@
   <title>Alumni | HMA Alumni Association</title>
 
   <meta name="description"
-        content="Explore HMA alumni by graduation year, discover their origins in Ethiopia and follow their journeys around the world.">
+        content="Meet HMA alumni by graduation year and explore their journeys from Ethiopia to the world.">
 
   <link rel="stylesheet" href="css/style.css">
-
   <link rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 
@@ -82,36 +81,97 @@
       color: #9B4D23;
     }
 
-    .table-wrap {
-      overflow-x: auto;
-      margin-bottom: 30px;
+    .year-group {
+      margin: 32px 0 45px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: white;
+    .year-heading {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 2px solid #DDE5EC;
+      padding-bottom: 12px;
+      margin-bottom: 24px;
     }
 
-    caption {
-      text-align: left;
-      font-weight: bold;
-      padding: 12px 0;
+    .year-heading h3 {
       color: #0A5E9A;
+      font-size: 24px;
+      margin: 0;
     }
 
-    th,
-    td {
-      padding: 14px;
-      text-align: left;
-      border-bottom: 1px solid #DDE5EC;
-      vertical-align: top;
+    .year-count {
+      background: #F3F7FA;
+      color: #586577;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 13px;
     }
 
-    th {
-      background: #0A5E9A;
-      color: white;
-      white-space: nowrap;
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .profile-card {
+      min-width: 0;
+      text-align: center;
+      padding: 22px 16px;
+      background: white;
+      border: 1px solid #DDE5EC;
+      border-radius: 10px;
+    }
+
+    .profile-photo,
+    .profile-initials {
+      width: 140px;
+      height: 160px;
+      max-width: 100%;
+      margin: 0 auto 16px;
+      border-radius: 8px;
+    }
+
+    .profile-photo {
+      display: block;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .profile-initials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #EAF2F8;
+      color: #0A5E9A;
+      font-size: 38px;
+      font-weight: bold;
+    }
+
+    .profile-name {
+      color: #0A5E9A;
+      font-size: 18px;
+      line-height: 1.4;
+      margin: 0 0 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-details {
+      margin: 0;
+      color: #586577;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .profile-details p {
+      margin: 5px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-job {
+      color: #9B4D23;
+      font-weight: bold;
     }
 
     .maps {
@@ -133,8 +193,25 @@
       font-size: 14px;
     }
 
+    @media (max-width: 950px) {
+      .profiles-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 700px) {
+      .profiles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
       .maps {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .profiles-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -142,18 +219,12 @@
 </head>
 
 <body>
-
-  <!-- HEADER -->
   <header>
     <div class="container header-inner">
-
       <a href="index.html" class="brand">
-        <img
-          src="HMA_logo_color.webp"
-          alt="Haile-Manas Academy logo"
-          width="1500"
-          height="595"
-        >
+        <img src="HMA_logo_color.webp"
+             alt="Haile-Manas Academy logo"
+             width="1500" height="595">
 
         <div>
           <strong>HMA Alumni Association</strong>
@@ -169,48 +240,35 @@
         <a href="index.html#updates">Updates</a>
         <a href="join.html">Join Us</a>
       </nav>
-
     </div>
   </header>
 
   <main>
-
-    <!-- INTRODUCTION -->
     <section class="hero">
       <div class="container">
-
         <div class="eyebrow">Our Alumni Community</div>
-
         <h1>Bridge Between HMA and Its Graduates</h1>
 
         <p>
-          Explore our graduates by year, discover their journeys
+          Meet our graduates, discover their journeys
           and stay connected with the HMA community.
         </p>
 
-        <p class="tagline">
-          Winning Life Through Education
-        </p>
-
+        <p class="tagline">Winning Life Through Education</p>
       </div>
     </section>
 
-    <!-- DIRECTORY -->
     <section>
       <div class="container">
-
-        <h2>Alumni by Graduation Year</h2>
+        <h2>Meet Our Alumni</h2>
 
         <p>
-          Browse the classes of 2024–2027 and discover
-          the growing HMA alumni community.
+          Explore alumni profiles grouped by graduation year.
         </p>
 
         <div class="filters">
-
           <div class="filter">
             <label for="year">Graduation year</label>
-
             <select id="year">
               <option value="all">All years</option>
               <option value="2024">2024</option>
@@ -222,7 +280,6 @@
 
           <div class="filter">
             <label for="region">Region of origin</label>
-
             <select id="region">
               <option value="all">All regions</option>
             </select>
@@ -230,50 +287,38 @@
 
           <div class="filter">
             <label for="search">Search alumni</label>
-
-            <input
-              id="search"
-              type="search"
-              placeholder="Name, town, college or profession"
-            >
+            <input id="search"
+                   type="search"
+                   placeholder="Name, town, college or profession">
           </div>
-
         </div>
 
         <div class="directory-toolbar">
-          <button
-            id="refresh"
-            type="button"
-            class="button refresh-button"
-          >
+          <button id="refresh"
+                  type="button"
+                  class="button refresh-button">
             Refresh Profiles
           </button>
 
-          <p
-            id="load-status"
-            class="status"
-            role="status"
-            aria-live="polite"
-          >
+          <p id="load-status"
+             class="status"
+             role="status"
+             aria-live="polite">
             Loading alumni profiles…
           </p>
         </div>
 
         <p id="result-count" aria-live="polite"></p>
-
         <div id="directory" aria-busy="true"></div>
 
         <noscript>
-          Please enable JavaScript to load the alumni directory.
+          Please enable JavaScript to load alumni profiles.
         </noscript>
-
       </div>
     </section>
 
-    <!-- MAPS -->
     <section class="light">
       <div class="container">
-
         <h2>From Ethiopia to the World</h2>
 
         <p>
@@ -282,16 +327,11 @@
         </p>
 
         <div class="maps">
-
           <article>
             <h3>Origins Within Ethiopia</h3>
-
-            <div
-              id="origin-map"
-              class="map"
-              aria-label="Map of alumni origins in Ethiopia"
-            ></div>
-
+            <div id="origin-map"
+                 class="map"
+                 aria-label="Map of alumni origins"></div>
             <p id="origin-note" class="map-note">
               Loading locations…
             </p>
@@ -299,48 +339,32 @@
 
           <article>
             <h3>Student &amp; Graduate Destinations</h3>
-
-            <div
-              id="destination-map"
-              class="map"
-              aria-label="Map of alumni destinations"
-            ></div>
-
+            <div id="destination-map"
+                 class="map"
+                 aria-label="Map of alumni destinations"></div>
             <p id="destination-note" class="map-note">
               Loading locations…
             </p>
           </article>
-
         </div>
 
         <p class="map-note">
           Markers show towns or approximate locations,
-          rather than home addresses. Maps follow the
-          directory filters.
+          rather than home addresses. Maps follow the filters.
         </p>
-
       </div>
     </section>
 
-    <!-- PROFILE REGISTRATION -->
     <section id="profile-update">
       <div class="container intro">
-
         <h2>Register or Update Your Profile</h2>
 
         <p>
-          Help us keep the alumni register up to date.
           Contact the association to register or request
           changes to your profile.
         </p>
 
-        <!-- Add the Google Form URL in the script below
-             when the form is ready. -->
-        <a
-          id="profile-form"
-          class="button"
-          hidden
-        >
+        <a id="profile-form" class="button" hidden>
           Register or Update My Profile
         </a>
 
@@ -350,15 +374,12 @@
 
         <p>
           Email, telephone, exact addresses and private
-          messages are not displayed in this public directory.
+          messages are not displayed in this directory.
         </p>
-
       </div>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
   <footer>
     <div class="container">
       <p>&copy; 2026 HMA Alumni Association.</p>
@@ -372,9 +393,7 @@
     const DIRECTORY_URL =
       "https://script.google.com/macros/s/AKfycbyPOm0aU1rEoSqVji6UWrar140tjI34KUyY407RzK1MzMrLloLdbKH2xAK2e4h6U2rf/exec";
 
-    // Add your Google Form URL here when available.
     const PROFILE_FORM_URL = "";
-
     const YEARS = [2024, 2025, 2026, 2027];
 
     let alumni = [];
@@ -405,6 +424,18 @@
       return value == null ? "" : String(value).trim();
     }
 
+    function initials(name) {
+      const words = text(name).split(/\s+/).filter(Boolean);
+
+      return words
+        .filter((word, index) =>
+          index === 0 || index === words.length - 1
+        )
+        .map(word => Array.from(word)[0])
+        .join("")
+        .toUpperCase();
+    }
+
     function validCoordinates(value) {
       return Array.isArray(value) &&
         value.length === 2 &&
@@ -416,10 +447,10 @@
     function initializeMaps() {
       if (typeof L === "undefined") {
         document.getElementById("origin-note").textContent =
-          "Map could not load. The directory is still available.";
+          "Map could not load. Profiles are still available.";
 
         document.getElementById("destination-note").textContent =
-          "Map could not load. The directory is still available.";
+          "Map could not load. Profiles are still available.";
 
         return;
       }
@@ -453,16 +484,16 @@
 
       regionSelect.replaceChildren();
 
-      const allOption = document.createElement("option");
-      allOption.value = "all";
-      allOption.textContent = "All regions";
-      regionSelect.appendChild(allOption);
+      const option = document.createElement("option");
+      option.value = "all";
+      option.textContent = "All regions";
+      regionSelect.appendChild(option);
 
       regions.forEach(region => {
-        const option = document.createElement("option");
-        option.value = region;
-        option.textContent = region;
-        regionSelect.appendChild(option);
+        const item = document.createElement("option");
+        item.value = region;
+        item.textContent = region;
+        regionSelect.appendChild(item);
       });
 
       regionSelect.value = regions.includes(previous)
@@ -470,10 +501,96 @@
         : "all";
     }
 
-    function addCell(row, value) {
-      const cell = document.createElement("td");
-      cell.textContent = text(value) || "—";
-      row.appendChild(cell);
+    function addDetail(container, value, className) {
+      if (!text(value)) return;
+
+      const paragraph = document.createElement("p");
+      paragraph.textContent = value;
+
+      if (className) paragraph.className = className;
+
+      container.appendChild(paragraph);
+    }
+
+    function createProfileCard(person) {
+      const card = document.createElement("article");
+      card.className = "profile-card";
+
+      const fallback = document.createElement("div");
+      fallback.className = "profile-initials";
+      fallback.textContent = initials(person.fullName);
+      fallback.setAttribute("aria-hidden", "true");
+      card.appendChild(fallback);
+
+      // Photos must be public image URLs or repository image paths.
+      const photoUrl = text(person.photoUrl);
+
+      if (photoUrl) {
+        try {
+          const url = new URL(photoUrl, window.location.href);
+
+          if (url.protocol === "https:") {
+            const image = document.createElement("img");
+            image.className = "profile-photo";
+            image.alt = text(person.fullName);
+            image.width = 140;
+            image.height = 160;
+            image.loading = "lazy";
+            image.referrerPolicy = "no-referrer";
+            image.hidden = true;
+
+            image.onload = function() {
+              fallback.hidden = true;
+              image.hidden = false;
+            };
+
+            image.onerror = function() {
+              image.remove();
+              fallback.hidden = false;
+            };
+
+            card.insertBefore(image, fallback);
+            image.src = url.href;
+          }
+        } catch (error) {
+          // Keep initials if the image URL is invalid.
+        }
+      }
+
+      const name = document.createElement("h4");
+      name.className = "profile-name";
+      name.textContent = text(person.fullName);
+      card.appendChild(name);
+
+      const details = document.createElement("div");
+      details.className = "profile-details";
+
+      addDetail(details, person.job, "profile-job");
+      addDetail(details, person.college);
+
+      const origin = [
+        person.town,
+        person.zone,
+        person.region
+      ].map(text).filter(Boolean).join(", ");
+
+      if (origin) addDetail(details, "From: " + origin);
+
+      const destination = [
+        person.currentCity,
+        person.destinationCountry
+      ].map(text).filter(Boolean).join(", ");
+
+      if (destination) {
+        addDetail(details, "Based in: " + destination);
+      }
+
+      if (person.admissionYear) {
+        addDetail(details, "Admitted: " + person.admissionYear);
+      }
+
+      card.appendChild(details);
+      return card;
     }
 
     function addMarker(group, coordinates, person, location) {
@@ -483,15 +600,12 @@
       name.textContent = text(person.fullName);
       popup.appendChild(name);
 
-      const details = document.createElement("p");
-      details.textContent =
+      const paragraph = document.createElement("p");
+      paragraph.textContent =
         "Class of " + person.graduationYear + " · " + location;
+      popup.appendChild(paragraph);
 
-      popup.appendChild(details);
-
-      L.marker(coordinates)
-        .bindPopup(popup)
-        .addTo(group);
+      L.marker(coordinates).bindPopup(popup).addTo(group);
     }
 
     function renderMaps(records) {
@@ -506,12 +620,8 @@
             originMarkers,
             person.originCoordinates,
             person,
-            [
-              person.town,
-              person.zone,
-              person.region,
-              "Ethiopia"
-            ].filter(Boolean).join(", ")
+            [person.town, person.zone, person.region, "Ethiopia"]
+              .filter(Boolean).join(", ")
           );
         }
 
@@ -520,29 +630,26 @@
             destinationMarkers,
             person.destinationCoordinates,
             person,
-            [
-              person.currentCity,
-              person.destinationCountry
-            ].filter(Boolean).join(", ")
+            [person.currentCity, person.destinationCountry]
+              .filter(Boolean).join(", ")
           );
         }
       });
 
-      const originCount = originMarkers.getLayers().length;
-      const destinationCount =
-        destinationMarkers.getLayers().length;
+      const origins = originMarkers.getLayers().length;
+      const destinations = destinationMarkers.getLayers().length;
 
       document.getElementById("origin-note").textContent =
-        originCount
-          ? originCount + " profiles with origin coordinates."
-          : "No origin coordinates available for this selection.";
+        origins
+          ? origins + " profiles with origin coordinates."
+          : "No origin coordinates for this selection.";
 
       document.getElementById("destination-note").textContent =
-        destinationCount
-          ? destinationCount + " profiles with destination coordinates."
-          : "No destination coordinates available for this selection.";
+        destinations
+          ? destinations + " profiles with destination coordinates."
+          : "No destination coordinates for this selection.";
 
-      if (originCount) {
+      if (origins) {
         originMap.fitBounds(originMarkers.getBounds(), {
           padding: [25, 25],
           maxZoom: 8
@@ -551,14 +658,11 @@
         originMap.setView([9.1, 40.5], 5);
       }
 
-      if (destinationCount) {
-        destinationMap.fitBounds(
-          destinationMarkers.getBounds(),
-          {
-            padding: [25, 25],
-            maxZoom: 8
-          }
-        );
+      if (destinations) {
+        destinationMap.fitBounds(destinationMarkers.getBounds(), {
+          padding: [25, 25],
+          maxZoom: 8
+        });
       } else {
         destinationMap.setView([15, 15], 2);
       }
@@ -595,9 +699,7 @@
       });
 
       directory.replaceChildren();
-
-      resultCount.textContent =
-        records.length + " profiles shown.";
+      resultCount.textContent = records.length + " profiles shown.";
 
       const visibleYears = yearSelect.value === "all"
         ? YEARS
@@ -605,88 +707,48 @@
 
       visibleYears.forEach(year => {
         const group = records
-          .filter(person =>
-            Number(person.graduationYear) === year
-          )
+          .filter(person => Number(person.graduationYear) === year)
           .sort((a, b) =>
             text(a.fullName).localeCompare(text(b.fullName))
           );
+
+        const section = document.createElement("div");
+        section.className = "year-group";
+
+        const header = document.createElement("div");
+        header.className = "year-heading";
 
         const heading = document.createElement("h3");
         heading.textContent = year === 2027
           ? "Class of 2027 — Upcoming"
           : "Class of " + year;
 
-        directory.appendChild(heading);
+        const count = document.createElement("span");
+        count.className = "year-count";
+        count.textContent =
+          group.length + (group.length === 1 ? " profile" : " profiles");
+
+        header.appendChild(heading);
+        header.appendChild(count);
+        section.appendChild(header);
 
         if (!group.length) {
           const message = document.createElement("p");
           message.textContent =
             "No published profiles for this selection yet.";
-          directory.appendChild(message);
-          return;
+          section.appendChild(message);
+        } else {
+          const grid = document.createElement("div");
+          grid.className = "profiles-grid";
+
+          group.forEach(person => {
+            grid.appendChild(createProfileCard(person));
+          });
+
+          section.appendChild(grid);
         }
 
-        const wrapper = document.createElement("div");
-        wrapper.className = "table-wrap";
-
-        const table = document.createElement("table");
-
-        const caption = document.createElement("caption");
-        caption.textContent = "Class of " + year + " directory";
-        table.appendChild(caption);
-
-        const head = document.createElement("thead");
-        const headerRow = document.createElement("tr");
-
-        [
-          "#",
-          "Full Name",
-          "Admission Year",
-          "Region",
-          "Zone",
-          "Town",
-          "Graduation Year",
-          "College",
-          "Current City / Country",
-          "Job"
-        ].forEach(label => {
-          const cell = document.createElement("th");
-          cell.scope = "col";
-          cell.textContent = label;
-          headerRow.appendChild(cell);
-        });
-
-        head.appendChild(headerRow);
-        table.appendChild(head);
-
-        const body = document.createElement("tbody");
-
-        group.forEach((person, index) => {
-          const row = document.createElement("tr");
-
-          [
-            index + 1,
-            person.fullName,
-            person.admissionYear,
-            person.region,
-            person.zone,
-            person.town,
-            person.graduationYear,
-            person.college,
-            [
-              person.currentCity,
-              person.destinationCountry
-            ].filter(Boolean).join(", "),
-            person.job
-          ].forEach(value => addCell(row, value));
-
-          body.appendChild(row);
-        });
-
-        table.appendChild(body);
-        wrapper.appendChild(table);
-        directory.appendChild(wrapper);
+        directory.appendChild(section);
       });
 
       renderMaps(records);
@@ -723,7 +785,6 @@
       }
     }
 
-    // Matches the callback permitted by your Apps Script.
     window.hmaAlumniLoaded = function(payload) {
       if (!activeRequest) return;
 
@@ -751,7 +812,6 @@
       renderDirectory();
 
       loadStatus.classList.remove("error");
-
       loadStatus.textContent = alumni.length
         ? "Profiles refreshed successfully."
         : "Connected successfully. No approved public profiles yet.";
@@ -778,14 +838,14 @@
         script: script,
         timer: setTimeout(() => {
           showLoadError(
-            "Loading timed out. Please click Refresh Profiles to try again."
+            "Loading timed out. Click Refresh Profiles to try again."
           );
         }, 30000)
       };
 
       script.onerror = function() {
         showLoadError(
-          "Connection failed. Check your internet and web-app access settings."
+          "Connection failed. Check your internet and web-app access."
         );
       };
 
@@ -793,9 +853,9 @@
     }
 
     if (PROFILE_FORM_URL) {
-      const formLink = document.getElementById("profile-form");
-      formLink.href = PROFILE_FORM_URL;
-      formLink.hidden = false;
+      const link = document.getElementById("profile-form");
+      link.href = PROFILE_FORM_URL;
+      link.hidden = false;
     }
 
     yearSelect.addEventListener("change", renderDirectory);
@@ -806,6 +866,5 @@
     initializeMaps();
     loadProfiles();
   </script>
-
 </body>
-</html>Sela
+</html>
