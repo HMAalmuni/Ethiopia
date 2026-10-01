@@ -1,303 +1,422 @@
-/* HMA ALUMNI ASSOCIATION */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-:root {
-  --blue: #0A5E9A;
-  --brown: #9B4D23;
-  --brown-hover: #7C3E1C;
-  --text: #232323;
-  --muted: #586577;
-  --light: #F3F7FA;
-  --white: #FFFFFF;
-  --border: #DDE5EC;
+  <title>HMA Alumni Association</title>
+  <meta name="description"
+        content="Connect with HMA graduates, support students and build lifelong relationships.">
 
-  /* Compatibility with the earlier page */
-  --gold: var(--brown);
-}
+  <style>
+    :root {
+      --blue: #163b65;
+      --gold: #e9b949;
+      --text: #253449;
+      --muted: #586577;
+      --light: #f4f7fb;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--text);
-  background: var(--white);
-  line-height: 1.7;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      background: white;
+    }
 
-.container {
-  width: min(1050px, 90%);
-  margin: auto;
-}
+    .container {
+      width: min(1050px, 90%);
+      margin: auto;
+    }
 
-/* HEADER */
+    header {
+      background: white;
+      border-bottom: 1px solid #e1e6ed;
+    }
 
-header {
-  background: var(--white);
-  border-bottom: 1px solid var(--border);
-}
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 16px 0;
+    }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 16px 0;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--blue);
+      text-decoration: none;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: var(--blue);
-  text-decoration: none;
-}
+    .brand img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
 
-.brand img {
-  width: 220px;
-  max-width: 100%;
-  height: auto;
-  object-fit: contain;
-}
+    .brand strong {
+      display: block;
+      font-size: 21px;
+      line-height: 1.3;
+    }
 
-.brand strong {
-  display: block;
-  font-size: 21px;
-  line-height: 1.3;
-}
+    .brand span {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+    }
 
-.brand span {
-  display: block;
-  font-size: 12px;
-  color: var(--muted);
-}
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+    nav a {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-nav a {
-  color: var(--blue);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-nav a:hover {
-  color: var(--brown);
-  text-decoration: underline;
-}
+    a:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 5px;
+    }
 
-a:focus-visible {
-  outline: 3px solid var(--brown);
-  outline-offset: 5px;
-}
+    .hero {
+      background: var(--blue);
+      color: white;
+      text-align: center;
+      padding: 75px 0;
+    }
 
-/* WELCOME SECTION */
+    .hero .eyebrow {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
 
-.hero {
-  background: var(--blue);
-  color: var(--white);
-  text-align: center;
-  padding: 75px 0;
-}
+    h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      line-height: 1.2;
+      margin: 18px auto;
+      max-width: 750px;
+    }
 
-.hero .eyebrow {
-  color: var(--white);
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
+    .hero p {
+      max-width: 650px;
+      margin: 16px auto;
+    }
 
-h1 {
-  font-size: clamp(32px, 5vw, 48px);
-  line-height: 1.2;
-  margin: 18px auto;
-  max-width: 750px;
-}
+    .tagline {
+      color: var(--gold);
+      font-weight: bold;
+    }
 
-.hero p {
-  max-width: 650px;
-  margin: 16px auto;
-}
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: #172b43;
+      padding: 12px 25px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 16px;
+    }
 
-.tagline {
-  color: var(--white);
-  font-weight: bold;
-}
+    .button:hover {
+      background: #f3ca66;
+    }
 
-/* BUTTONS */
+    section {
+      padding: 55px 0;
+      scroll-margin-top: 20px;
+    }
 
-.button {
-  display: inline-block;
-  background: var(--brown);
-  color: var(--white);
-  padding: 12px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 16px;
-}
+    h2 {
+      color: var(--blue);
+      font-size: 28px;
+      line-height: 1.3;
+      margin: 0 0 18px;
+    }
 
-.button:hover {
-  background: var(--brown-hover);
-}
+    .intro {
+      max-width: 800px;
+    }
 
-.hero .button:focus-visible {
-  outline-color: var(--white);
-}
+    .light {
+      background: var(--light);
+    }
 
-/* PAGE SECTIONS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 25px;
+    }
 
-section {
-  padding: 55px 0;
-  scroll-margin-top: 20px;
-}
+    .card {
+      background: white;
+      border: 1px solid #e1e6ed;
+      border-radius: 8px;
+      padding: 25px;
+    }
 
-h2 {
-  color: var(--blue);
-  font-size: 28px;
-  line-height: 1.3;
-  margin: 0 0 18px;
-}
+    .card h3 {
+      color: var(--blue);
+      font-size: 19px;
+      margin: 0 0 10px;
+    }
 
-.intro {
-  max-width: 800px;
-}
+    .card p {
+      color: var(--muted);
+      margin: 0;
+    }
 
-.light {
-  background: var(--light);
-}
+    .updates {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
 
-/* PURPOSE CARDS */
+    .update {
+      border-left: 4px solid var(--gold);
+      padding-left: 20px;
+    }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 25px;
-}
+    .update h3 {
+      color: var(--blue);
+      margin: 0 0 8px;
+    }
 
-.card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-top: 4px solid var(--brown);
-  border-radius: 8px;
-  padding: 25px;
-}
+    .update p {
+      margin: 0;
+      color: var(--muted);
+    }
 
-.card h3 {
-  color: var(--blue);
-  font-size: 19px;
-  margin: 0 0 10px;
-}
+    .join {
+      text-align: center;
+      background: var(--light);
+    }
 
-.card p {
-  color: var(--muted);
-  margin: 0;
-}
+    .join p {
+      max-width: 650px;
+      margin: 15px auto;
+    }
 
-/* NEWS AND EVENTS */
+    footer {
+      background: var(--blue);
+      color: white;
+      text-align: center;
+      padding: 22px 0;
+      font-size: 13px;
+    }
 
-.updates {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
-}
+    footer p {
+      margin: 4px 0;
+    }
 
-.update {
-  border-left: 4px solid var(--brown);
-  padding-left: 20px;
-}
+    @media (max-width: 700px) {
+      .header-inner {
+        flex-direction: column;
+        gap: 16px;
+      }
 
-.update h3 {
-  color: var(--blue);
-  margin: 0 0 8px;
-}
+      nav {
+        justify-content: center;
+        gap: 16px;
+      }
 
-.update p {
-  margin: 0;
-  color: var(--muted);
-}
+      .hero {
+        padding: 50px 0;
+      }
 
-/* JOIN SECTION */
+      section {
+        padding: 40px 0;
+      }
 
-.join {
-  text-align: center;
-  background: var(--light);
-}
+      .cards,
+      .updates {
+        grid-template-columns: 1fr;
+      }
 
-.join p {
-  max-width: 650px;
-  margin: 15px auto;
-}
+      .brand strong {
+        font-size: 19px;
+      }
+    }
 
-/* FOOTER */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
 
-footer {
-  background: var(--blue);
-  color: var(--white);
-  text-align: center;
-  padding: 22px 0;
-  font-size: 13px;
-}
+<body>
 
-footer p {
-  margin: 4px 0;
-}
+  <!-- HEADER AND LOGO -->
+  <header>
+    <div class="container header-inner">
+      <a href="#home" class="brand">
+        <img src="hma-logo.png" alt="HMA logo"
+             width="72" height="72">
 
-/* MOBILE */
+        <div>
+          <strong>HMA Alumni Association</strong>
+          <span>Winning Life Through Education</span>
+        </div>
+      </a>
 
-@media (max-width: 900px) {
-  .header-inner {
-    flex-direction: column;
-    gap: 16px;
-  }
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#purpose">Our Purpose</a>
+        <a href="#updates">Updates</a>
+        <a href="#join">Join Us</a>
+      </nav>
+    </div>
+  </header>
 
-  nav {
-    justify-content: center;
-    gap: 16px;
-  }
-}
+  <main>
+    <!-- WELCOME -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="eyebrow">Welcome to HMA Alumni</div>
 
-@media (max-width: 700px) {
-  .brand {
-    flex-direction: column;
-    text-align: center;
-  }
+        <h1>Where Dreams Turn to Reality</h1>
 
-  .brand img {
-    width: 200px;
-  }
+        <p>
+          Through education, hard work and dedication,
+          we stay connected and inspire the next generation.
+        </p>
 
-  .brand strong {
-    font-size: 19px;
-  }
+        <p class="tagline">Winning Life Through Education</p>
 
-  .hero {
-    padding: 50px 0;
-  }
+        <a href="#join" class="button">Join the Alumni Network</a>
+      </div>
+    </section>
 
-  section {
-    padding: 40px 0;
-  }
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container intro">
+        <h2>A Lifelong Connection</h2>
 
-  .cards,
-  .updates {
-    grid-template-columns: 1fr;
-  }
-}
+        <p>
+          The HMA Alumni Association connects former students,
+          faculty and administration. It is a place to reconnect
+          with classmates, share experiences and support the
+          HMA community.
+        </p>
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
+        <p>
+          Our objective is to build lifelong relationships through
+          regular communication, networking and opportunities
+          to give back.
+        </p>
+      </div>
+    </section>
+
+    <!-- PURPOSE -->
+    <section id="purpose" class="light">
+      <div class="container">
+        <h2>Our Purpose</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Stay Connected</h3>
+            <p>
+              Keep in touch with classmates, share updates
+              and build personal and professional connections.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Support HMA</h3>
+            <p>
+              Help advance the school through fundraising
+              for its library, laboratories, cafeteria and
+              other facilities.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Inspire Students</h3>
+            <p>
+              Share knowledge, mentor students and connect
+              them with learning and career opportunities.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPDATES -->
+    <section id="updates">
+      <div class="container">
+        <h2>News &amp; Events</h2>
+
+        <div class="updates">
+          <article class="update">
+            <h3>Alumni News</h3>
+            <p>
+              Alumni stories and community announcements
+              will be shared here.
+            </p>
+          </article>
+
+          <article class="update">
+            <h3>Upcoming Events</h3>
+            <p>
+              Details of reunions, networking activities
+              and school support initiatives will be posted here.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOIN -->
+    <section id="join" class="join">
+      <div class="container">
+        <h2>Be Part of the HMA Community</h2>
+
+        <p>
+          Reconnect with your classmates, share your journey
+          and help future generations achieve their dreams.
+        </p>
+
+        <!-- Replace this paragraph with your registration
+             form link or official contact details when ready. -->
+        <p>Alumni registration and contact details will be added soon.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 HMA Alumni Association.</p>
+      <p>Winning Life Through Education</p>
+    </div>
+  </footer>
+
+</body>
+</html>
